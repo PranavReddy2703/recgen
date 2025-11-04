@@ -1,0 +1,51 @@
+.section {
+  margin-bottom: 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  /* This is the key fix for alignment. */
+  align-items: start;
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* This targets all labels directly inside the row's children */
+.row > div > label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  outline: none;
+}
+
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* This is for the checkbox label */
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Match the height of the select menu for better spacing */
+  min-height: 45px;
+  font-weight: normal; /* Override bold label if needed */
+}

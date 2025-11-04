@@ -1,0 +1,94 @@
+/* Define accent color locally or use a global variable */
+:root {
+  --accent-color: #4f46e5; /* Indigo */
+  --border-color: #d1d5db; /* Gray */
+  --text-muted: #6b7280; /* Muted Gray */
+}
+
+/* --- Main Layout --- */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* --- Field & Label Style --- */
+.field label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* This wrapper helps position the icon inside the input */
+.inputWrapper {
+  position: relative;
+}
+
+/* --- The Underline Input Style --- */
+.input,
+.select {
+  width: 80%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111827;
+
+  /* This creates the underline effect */
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+
+  /* Clean up default appearance */
+  background-color: transparent;
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none; /* Removes default Safari/Chrome styling for select */
+  -moz-appearance: none; /* Removes default Firefox styling */
+  appearance: none;
+
+  /* Add padding for text and icon */
+  padding: 0.75rem 0.5rem 0.75rem 2.5rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* Change border color on hover and focus for a nice interactive feel */
+.input:focus,
+.select:focus {
+  border-bottom-color: var(--accent-color);
+}
+.input:hover,
+.select:hover {
+  border-bottom-color: #9ca3af; /* A darker gray on hover */
+}
+.input:focus:hover,
+.select:focus:hover {
+  border-bottom-color: var(--accent-color); /* Focus color takes priority */
+}
+
+
+/* --- Adding the Icons --- */
+/* Clock icon for Time input */
+.input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239ca3af'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5H10V5z' clip-rule='evenodd' /%3E%3C/svg%3E");
+}
+/* Bar chart icon for Level select */
+.select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239ca3af'%3E%3Cpath d='M2 10a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zM2 15a.75.75 0 01.75-.75h5.5a.75.75 0 010 1.5H2.75A.75.75 0 012 15zM2 5a.75.75 0 01.75-.75h9.5a.75.75 0 010 1.5H2.75A.75.75 0 012 5z' /%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239ca3af'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd' /%3E%3C/svg%3E");
+  background-position: left 0.75rem center, right 0.5rem center;
+  background-size: 1.25rem, 1.25rem;
+}
+
+/* Generic icon styling */
+.input, .select {
+  background-repeat: no-repeat;
+  background-position: left 0.75rem center;
+  background-size: 1.25rem;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}

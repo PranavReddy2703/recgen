@@ -1,0 +1,92 @@
+/* --- Collapsible Section Styling --- */
+.details {
+  border-bottom: 1px solid #e5e7eb; /* Light gray border */
+  padding: 0.5rem 0;
+  transition: background-color 0.2s ease;
+}
+
+/* Add a subtle background on hover for the whole section */
+.details:hover {
+  background-color: #f9fafb; /* Off-white */
+}
+
+.details summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151; /* Gray 700 */
+  padding: 0.75rem 0.5rem;
+  cursor: pointer;
+  list-style: none; /* Remove default marker */
+}
+
+/* Hide the default arrow on Webkit browsers (Chrome, Safari) */
+.details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom chevron arrow using a pseudo-element */
+.details summary::after {
+  content: '';
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236b7280'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd' /%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Rotate the arrow when the section is open */
+.details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+/* --- Filter Chip Styling --- */
+
+/* Container for the chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem 0.5rem;
+}
+
+/* Individual chip button */
+.chip {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 9999px; /* Pill shape */
+  cursor: pointer;
+  
+  /* Default (inactive) state */
+  background-color: #f3f4f6; /* Light Gray */
+  color: #4b5563; /* Medium Gray */
+  border: 1px solid transparent;
+
+  /* Smooth transition for all property changes */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover state for inactive chips */
+.chip:hover {
+  background-color: #e5e7eb; /* Darker Gray */
+  color: #1f2937;
+}
+
+/* Active (selected) state */
+.chip.active {
+  background-color: #4f46e5; /* Accent Color */
+  color: #ffffff;
+  border-color: #4338ca;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Hover state for active chips */
+.chip.active:hover {
+  background-color: #4338ca; /* Darker Accent */
+}

@@ -1,0 +1,107 @@
+/* --- Main Section & Input Row --- */
+.section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151; /* Gray 700 */
+}
+
+/* Defines the layout for the input fields and 'Add' button */
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Using flex properties to manage input field widths */
+.row input:nth-child(1) {
+  flex: 3 1 150px; /* flex-grow, flex-shrink, flex-basis */
+}
+
+.row input:nth-child(2),
+.row input:nth-child(3) {
+  flex: 1 1 80px;
+}
+
+/* --- Secondary Button Style --- */
+.btnSecondary {
+  flex: 1 1 70px;
+  padding: 0.65rem 1rem;
+  background-color: #e5e7eb; /* Light Gray */
+  color: #374151; /* Dark Gray */
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btnSecondary:hover {
+  background-color: #4338ca;
+  color: white;
+}
+
+/* --- Ingredient Pill/Tag Styles --- */
+
+/* Container for the pills */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+/* Style for an individual pill */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e0e7ff; /* Light Indigo */
+  color: #4338ca; /* Dark Indigo */
+  padding: 0.3rem 0.4rem 0.3rem 0.8rem;
+  border-radius: 9999px; /* Pill shape */
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Remove button ('×') inside the pill */
+.remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.5rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  /* Helps vertically center the '×' character */
+  padding: 0 0 2px 0;
+}
+
+.remove:hover {
+  background-color: #3730a3; /* Darker Indigo */
+}
+
+/* Special style for pills that conflict with allergens */
+.conflict {
+  background-color: #fee2e2; /* Light Red */
+  color: #b91c1c; /* Dark Red */
+}
+
+.conflict .remove {
+  background-color: #dc2626; /* Red */
+}
+
+.conflict .remove:hover {
+  background-color: #b91c1c; /* Darker Red */
+}

@@ -1,0 +1,125 @@
+/* --- Main Layout & Container --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* This creates the two-column layout.
+  The left column (form) is slightly narrower than the right (recipe).
+*/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: flex-start; /* Aligns items to the top of their grid cell */
+}
+
+/* --- Typography --- */
+.h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827; /* Dark Gray */
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.p {
+  font-size: 1.1rem;
+  color: #6b7280; /* Medium Gray */
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+.small {
+  font-size: 0.875rem;
+  color: #6b7280; /* Medium Gray */
+  text-align: center;
+}
+
+/* --- Card Styling --- */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07),
+    0 2px 4px -2px rgb(0 0 0 / 0.07);
+}
+
+/* --- Primary Button --- */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background-color: #4f46e5; /* Indigo */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #4338ca; /* Darker Indigo */
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.btn:disabled {
+  background-color: #9ca3af; /* Light Gray */
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* --- Recipe Preview Placeholder --- */
+.preview {
+  position: sticky; /* Keeps the preview in view on scroll */
+  top: 2rem;
+  background-color: #f9fafb; /* Off-white */
+  border: 2px dashed #d1d5db; /* Dashed Gray Border */
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview h3 {
+  font-size: 1.25rem;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.preview p {
+  color: #6b7280;
+  margin: 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 950px) {
+  .grid {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+  }
+
+  .preview {
+    position: static; /* Un-stick the preview box */
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+  .h1 {
+    font-size: 2rem;
+  }
+}
